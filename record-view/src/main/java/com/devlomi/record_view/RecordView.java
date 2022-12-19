@@ -488,8 +488,7 @@ public class RecordView extends RelativeLayout implements RecordLockViewListener
                                 (ViewCompat.getLayoutDirection(counterTime) == ViewCompat.LAYOUT_DIRECTION_RTL &&
                                         motionEvent.getRawY() < initialRecordButtonY && motionEvent.getRawX() <= (recordLockXInWindow + 10));
             } else {
-                return (ViewCompat.getLayoutDirection(counterTime) == ViewCompat.LAYOUT_DIRECTION_LTR && dif <= initialRecordButtonY && motionEvent.getRawX() >= recordLockXInWindow) ||
-                        (ViewCompat.getLayoutDirection(counterTime) == ViewCompat.LAYOUT_DIRECTION_RTL && dif <= initialRecordButtonY && motionEvent.getRawX() <= (recordLockXInWindow + 10));
+                return motionEvent.getRawX() >= recordLockXInWindow;
             }
         }
 
